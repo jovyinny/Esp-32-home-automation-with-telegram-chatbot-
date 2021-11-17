@@ -1,6 +1,9 @@
 import schedule,time
+#importing a function from functions_bot
 from functions_bot import connect
+#importing main function from bot.py
 from bot import main
+
 
 def runbot_at_given_time():
     if connect():
