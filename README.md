@@ -34,7 +34,7 @@ after succefully creating django project and app
 **static -> this holds the static files such as css,js and images** and 
 **Templates -> this holds all html files**
  In the root directory of your project(the folder containing manage.py file) go to the project file
-                    copy the url.py 
+  add the urlpatterns from the url.py(__The file will be provided later__) 
  and change settings.py file as below:
  
           add your app name in INSTALLEDAPPS list ->"<app name>"
