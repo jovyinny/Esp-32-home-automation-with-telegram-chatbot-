@@ -1,0 +1,56 @@
+<title>Login</title>
+{%extends 'base.html'%}
+
+{%block navigation%}
+<style>
+  #options{
+    display: block;
+    color: chartreuse;
+  }
+</style>
+{%endblock%}
+
+{%block content%}
+<form class="form" method="POST">
+    {%csrf_token%} 
+<div > 
+    
+    <label style="color:rgb(35, 31, 143); font-size:100%;width: 90%;">JBM HOME AUTOMATION</label><br><br>
+    <label >LOG IN<br><br>
+        <span><i>{%if message == ''%}
+        {%else %}
+        {{message}}
+        {%endif%}</i></span></label><br><br>
+
+    <label>Username</label><br>
+    {{username}}
+    <br>
+    {% load static %}
+    <label><i class="fa fa-lock" ></i>Password</label><br>
+    {{password}}
+    <br>
+
+    <!-- toggle password visibility -->
+    <label>Show Password</label>
+    <input id="togglevisibility" type="checkbox" onclick="togglevisibility_func()"><br>
+    <script>
+        function togglevisibility_func() {
+          var x = document.getElementById("id_password");
+          if (x.type === "password") {
+            x.type = "text";
+          } else {
+            x.type = "password";
+          }
+        }
+        </script>
+
+    <button type="submit"> Log In</button><br><br>
+    <p >Have no account?<a href="sign_up">Sign Up here</a><br></p>
+    <p>Added by main user?<a href="sign_up_added">Added user sign up here</a>
+    </p>
+      
+</div>
+
+</form>
+
+{%endblock%}

@@ -1,0 +1,59 @@
+steps:
+NOTE: the ESP 32 circuit 
+create new folder for your project: then:-(in the project folder open the terminal)
+    create a virtual environment using for the project;
+        python3 pip -m venv <virtual environment name>
+        activate the virtual environment by:
+            source <virtual environment name>/bin/activate
+        
+            then install the following packages
+                used python package:-
+                django (pip install django==2.2.16)
+                telebot(
+                request(pip install request)
+                schedule(pip install schedule)->(this is not much important)
+        with active virtual environment
+            make your project;
+                django-admin startproject <project name>
+            create your django app:
+                run: django-admin startapp <app name>
+        after succefully creating django project and app
+            in the app folder:
+                add url.py and forms.py(downloaded from here)
+            in the root directory of your project(the folder containing manage.py file)
+                in the project file
+                    copy the url.py 
+                    and change settings.py file as below:
+                        add your app name in INSTALLEDAPPS list ->"Authenticate"
+                        add "'DIRS': [BASE_DIR,"Templates"]," in TEMPLATES list
+                        add this statement at the end of setting file
+                            (
+                                STATIC_URL = '/static/'
+                                STATICFILES_DIRS=[os.path.join(BASE_DIR,'static'),])
+                    
+                    add url.py file(copy the urlpattern in the from url.py)
+                            
+
+    
+
+
+Some of the default django files are not provided here:
+
+in the root directory:
+create following folders,
+    static -> this holds the static files such as css,js and images
+    Templates -> this holds all html files
+
+
+        For the page to have ability to run remotely: i used ngrok service for tunnelling 
+        download and extract ngrok from their official site to allow you to give your device 
+        internet capabilities
+    
+    run the django sever after setting most parameter (i.e url routings)
+    run ./ngrok<port from sever>
+
+for telegram chatbot:
+    Go to telegram->serach->@botFather->start-> follow the procedures to create the bot
+    Note the bot token bcz it is very important when you what to control your bot
+add .env file that will contain the bot key in format: "bot_key=[<bot token>]"
+You can adjust the time at which the bot run in schedule thenrun the run_bot.py, 

@@ -1,0 +1,38 @@
+{%extends "base.html"%}
+{%block content%}
+<form class="form" method="POST">
+    {%csrf_token%}
+    
+<div > 
+    <label style="color:rgb(49, 48, 39); font-size: 90%;width: 10%;">HOME AUTOMATION</label><br><br>
+    <label ><b>SIGN UP</b>(Create account)</i><br><span style="color: rgb(233, 53, 53);"><i>{%if message == ''%}
+        {%else %}
+        {{message}}
+        {%endif%}</i></span> </label><br><br>
+    <label>Full username</label><br>
+    {{username}}
+    <br>
+    <label>Main controller ID</label><br>
+  
+    {{maincontrollerID}}
+    <br>
+    <label>Phone number:</label><br>
+    {{phone_number}}
+    <br>
+    <label>Telegram username</label><br>
+    {{telegram_username}}
+    <br>
+    <span style="color: rgb(163, 11, 11); font-size: 90%;">Password should have atleast 4 digits or letters followed by special character such as @#$%&\+</span><br>
+    <i class="fa fa-lock"></i>
+    <span>Enter your password</span><br>
+    <input name="password" type="password"  required><br>
+    {%load static%}
+    <i class="fa fa-lock"></i>
+    <span>Re enter password</span><br>
+    <input name="password2" type="password" required><br><br>
+    <button type="submit">Sign Up</button><br><br>
+    
+</div>
+
+</form>
+{%endblock%}

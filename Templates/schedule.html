@@ -1,0 +1,47 @@
+<title>Add Device schedule</title>
+{%extends "base.html"%}
+{%block content%}
+
+<style>
+        form{
+            background-color: rgb(164, 179, 201);
+            width: 60%;
+            margin-left: 20%;
+            margin-top: 10%;
+            padding: 2px;
+            border:5px solid rgb(157, 168, 190);
+            border-radius: 10px;
+           
+        }
+        label{
+            color:darkblue;
+            margin-left: 5%;
+        }
+    input  {
+        padding: 5px;
+        margin-left:20%;
+    }
+    /* input [type="date"]{
+        margin-left: 10px;
+    } */
+    input[type="submit"]{
+        padding: 10px;
+        margin-left:50%;
+        color: green;
+    }
+
+    </style>
+    <form>
+        <label>Add Schedule For Device {{device}}</label><br>
+
+        <label>Time on </label><br><input  name="time_on" type="time" max="" required> 
+        <span>Date:</span>
+        <input name="schedule_date" type="date" placeholder="Hour : Min in 24 hrs format"><br>
+
+        <label>Time off: </label><br><input name="time_off" type="time" required><span>Date: </span>
+        <input name="schedule_date" type="date" placeholder="Hour : Min in 24 hrs format"><br><br>
+        
+        <input type="submit" value="Add schedule" name="add_schedule">
+    </form>
+{%endblock%}
+

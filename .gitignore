@@ -1,0 +1,15 @@
+manage.py
+db.sqlite3
+Authenticate/__pycache__
+Authenticate/migrations
+Authenticate/__init__.py
+Home_Automation
+static/css/bootstrap.min.css
+static/icon
+static/js
+Telegram/__init__.py
+Telegram/.env
+Telegram/__pycache__
+network testing
+network testing/0.0.0.0_Archive [21-11-14 17-09-12].har
+workspace.code-workspace

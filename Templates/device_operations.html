@@ -1,0 +1,110 @@
+<title>Devices</title>
+{%extends 'base.html'%}
+
+{%block navigation%}
+<div id="options">
+    <h5 class="m-4">HOME</h5>
+    
+    <ul class="nav">
+    
+        <li class="nav-item">
+            <a href="home" id="showdevices" class="nav-link ">
+                <i class="fa fa-home"></i>
+                <span>Home</span></a>
+        </li>
+        <li class="nav-item">
+            <a href="logout" class="nav-link">
+                <i class="fa fa-user-lock"></i>
+                <span>Logout</span>
+            </a>
+        </li>
+
+    </ul>
+
+
+</div>
+<main class="offset-3" id="main">
+</main>
+{%endblock%}
+{%block content%}
+    <style>
+        #new input{
+            width:20%;
+            /* margin-left: 5%; */
+        }
+        #new input [type='submit']{
+            color:green;
+        } 
+    
+        #schedule label{
+            color:darkblue;
+            margin-left: 5%;
+        }
+        #schedule input  {
+            padding: 5px;
+            margin-left:20%;
+        }
+        /* input [type="date"]{
+            margin-left: 10px;
+        } */
+        #schedule input[type="submit"]{
+            padding: 10px;
+            margin-left:50%;
+            color: green;
+        }
+        
+    </style>
+
+    <div id="devicestatus"><span>MAIN CONTROLLER STATUS: on <br></span></div>
+
+    <div id="operations">
+        <form method="GET" action="?">
+            <h1 style="text-align: center;color:rgb(8, 54, 8);font-size: x-large;">DEVICE OPERATIONS</h1>
+            
+            <div id="devices">
+            {%for label,name in mydevices%}
+
+                {%for d_name,d_status in status%}
+                    {%if name == d_name %}
+
+                    <label class="device" >{{label}}</label><input class="btn btn-info" id="on" name={{name}} type="submit" value="on"> <input class="btn btn-danger" id="off" name={{name}} type="submit" value="off"><label>Status: {{d_status}} <button class="scheduler"  name="add_schedule" value="{{d_name}}">Add Schedule</button><span class="{{d_name}}display" name="{{d_name}}"></span> </label><br>
+                    {% else %}
+                
+                    {%endif%}
+                {%endfor%}
+            {%endfor%}
+        </form>
+
+        <form action="">
+            <input type="submit" id="add_device" name="add_device" value="Add Device">
+            {%if isdevice%}
+            <span id="new" style="display:block; width: 90%;">
+                <label>Device name:</label>
+                    {{device_name_form}}
+                <label>GPIO pin number</label>
+                {{pin_number}}
+                <input  type="submit" value="Add device">
+            </span>
+            
+
+            {%endif%}
+        </form>
+
+        {%if is_schedule%}
+        <form action="?">
+            <label>Add Schedule For Device {{device_scheduled}}</label><br>
+
+            <label>Time on </label><br><input  name="time_on" type="time" max="" required> 
+            <span>Date:</span>
+            <input name="schedule_date" type="date" placeholder="Hour : Min in 24 hrs format"><br>
+
+            <label>Time off: </label><br><input name="time_off" type="time" required><span>Date: </span>
+            <input name="schedule_date" type="date" placeholder="Hour : Min in 24 hrs format"><br><br>
+    
+            <input type="submit" value="Add schedule" name="add_schedule">
+    </form>
+</div>
+        {%endif%}
+    </div>
+</div>
+{%endblock%}

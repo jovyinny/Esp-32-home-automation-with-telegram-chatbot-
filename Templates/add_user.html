@@ -1,0 +1,72 @@
+<title>Add user </title>
+{%extends "base.html"%}
+
+{%block navigation%}
+<div id="options">
+    <h5 class="m-4">HOME</h5>
+    
+    <ul class="nav">
+    
+        <li class="nav-item">
+            <a href="home" id="showdevices" class="nav-link ">
+                <i class="fa fa-home"></i>
+                <span>Home</span></a>
+        </li>
+        <li class="nav-item">
+            <a href="logout" class="nav-link">
+                <i class="fa fa-user-lock"></i>
+                <span>Logout</span>
+            </a>
+        </li>
+
+    </ul>
+
+
+</div>
+<main class="offset-3" id="main">
+</main>
+{%endblock%}
+
+{%block content%}
+<style>
+    form{
+        width: 70%;
+        background-color: rgb(164, 179, 201);
+        border:5px solid rgb(157, 168, 190) ;
+        border-radius: 10px;
+        /* width: 40%; */
+        margin-left: 25%;
+        margin-top: 15%;
+    }
+    input{
+        width: 80%;
+        margin-left: 5%;
+    }
+    label{
+        color:rgba(2, 32, 4, 0.822);
+        margin-left: 6%;
+    }
+</style>
+
+        <form method="POST" >
+            {%csrf_token%}
+            <div >
+            <label>Add User </label><br>
+            <span style="color:rgb(158, 6, 6);">{%if message == ''%}
+                {%else %}
+                {{message}}
+                {%endif%}<br>{{verify_message}}</span><br>
+            
+            <label>Enter Full username to be added</label><br>
+            <!-- <input name='addusername' placeholder="Enter user's name to be added" required> -->
+            {{username}}
+            <br><br>
+
+            <!-- <input name='addusername2' placeholder="Re-enter the username" required> -->
+            <label>Re-enter full username to be added</label><br>
+            {{username2}}
+            <br><br>
+            <input style='background-color:rgb(2, 58, 2) ;margin-left: 70%;padding: 10px;color:yellow;width: 20%;' type='submit' value='OK'><br><br>
+        </div>
+        </form>
+{%endblock%}

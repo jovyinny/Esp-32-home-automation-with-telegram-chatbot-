@@ -1,0 +1,82 @@
+<title>Home</title>
+ 
+{%extends 'base.html'%}
+{%block content%}
+            <!-- <span style="color:rgb(158, 6, 6);">{%if username == ''%}
+                {%else %}
+                Welcome,
+                {{username}}
+                {%endif%}<br></span><br> -->
+
+        <div id="options">
+            
+                <h5 class="m-2">HOME</h5>
+                
+                <ul class="nav">
+                    {{username}}
+                    <li class="nav-item">
+                        {%if level %}
+                        
+                        <a href="add_user" id="adduser" class="nav-link ">
+                            <i class="fas fa-user-plus"></i>
+                            <span>Add User</span>
+                        </a>
+                    </li>
+                        {%else%}
+                        {%endif%}
+                    <li class="nav-item">
+                        <a href="device_operations" id="showdevices" class="nav-link ">
+                            <i class="fab fa-android"></i>
+                            <span>Devices</span></a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#" id="edit_details" class="nav-link">
+                            <i class="fa fa-edit"></i>
+                            <span>Edit Details</span></a>
+
+                            <ul id="subedit" class="nav">
+                                <li class="nav item">
+                                <a href="edit_user_details"  id="edit_user" class="nav-link"> 
+                                    <i class="fa fa-user-edit"></i>
+                                    <span>Your Details</span></a>
+                                <a href="edit_devices_details" id="edit_devices" class="nav-link">
+                                    <i class="fab fa-android"></i>
+                                    <i class="fa fa-edit"></i>
+                                    <span>Device details</span></a>
+                                </li>
+                            </ul>
+                        </li>
+                    <li class="nav-item">
+                        <a href="logout" class="nav-link">
+                            <i class="fa fa-user-lock"></i>
+                            <span>Logout</span>
+                        </a>
+                    </li>
+
+                </ul>
+            
+            
+        </div>
+        <main class="offset-3" id="main">
+        WELCOME TO JBM HOME AUTOMATION
+        </main>
+    <!-- <script>
+        $(document).ready(function(){
+            $("#adduser").click(function(){
+                $("#main").load("/add_user")
+            })
+            $("#showdevices").click(function(){
+                $("#main").load("/device_operations")
+            })
+            $("#edit_user").click(function(){
+            $("#main").load("/edit_user_details")
+            
+            })
+                $("#add_device").click(function(){
+                    $("#main").load("/device_operations?add_device=Add+Devices")
+                    
+                })
+        })
+    </script> -->
+
+{%endblock%}

@@ -1,0 +1,93 @@
+<title>Edit Your Details</title>
+{%extends "base.html"%}
+
+{%block navigation%}
+<div id="options">
+    <h5 class="m-4">HOME</h5>
+    
+    <ul class="nav">
+    
+        <li class="nav-item">
+            <a href="home" id="showdevices" class="nav-link ">
+                <i class="fa fa-home"></i>
+                <span>Home</span></a>
+        </li>
+        <li class="nav-item">
+            <a href="logout" class="nav-link">
+                <i class="fa fa-user-lock"></i>
+                <span>Logout</span>
+            </a>
+        </li>
+
+    </ul>
+
+
+</div>
+<main class="offset-3" id="main">
+</main>
+{%endblock%}
+{%block content%}
+<style>
+    #password_changing {
+    width:25%;
+    position: absolute;
+    display: none;
+    top: 90%;
+    left: 60%;
+    transform: translate(-50%, -50%);
+    border:5px solid rgb(157, 168, 190);
+    border-radius: 10px;
+    padding-left: 2%;
+    padding-top: 5%;
+    background-color: rgb(164, 179, 201);
+    }
+    .form{
+        width:40%;
+    }
+    form input{
+        width: 60%;
+        display: block;
+        
+    }
+    label{
+        color:rgb(14, 17, 14);
+    }
+    #message{
+        color: red;
+    }
+
+</style>
+<div>
+    <form class="form" action="" method="POST">
+        {%csrf_token%}
+        {%if message%}
+            <span id="message">{{message}}</span><br>
+        {%endif%}
+        <label style="color:rgb(35, 31, 143); font-size:100%;width: 90%;">Edit Your Details</label><br><br>
+        <span>Enter username</span>
+        <input name="username"type="text" placeholder="New username" required>
+        <span>Enter New phone number</span>
+        <input name="phone_number" type="tel" placeholder="New telephone number" value="{{Phone}}">
+        <span>Enter new telegram username</span>
+        <input name="telegram_name" type="text" placeholder="New telegram username" required>
+        <span id="display"></span><br>
+        <button id="edit" type="submit" name="edit" value="Edit">Edit</button><br>
+        <button id="change_password" name="edit_password">Change password</button>
+        
+    </form>
+    
+    <script>
+    $("#change_password").click(function () {
+        var change_password_form="<span>Old Password</span><input type='password' name='old_password'required><span>New Password</span><input type='password' name='new_password_1'required><span>Re-enter Password</span><input type='password' name='new_password_2'required>";  
+        // $("#password_changing").css("display","block")
+        // $(".form").css("height","80%")
+        $(".form #display").append(change_password_form)
+        $("#edit").attr("value","Edit_all")
+        $("#change_password").css("display","none")
+
+    })
+    </script>
+</div>
+
+
+{%endblock%}

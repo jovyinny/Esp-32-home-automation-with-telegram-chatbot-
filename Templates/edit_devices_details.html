@@ -1,0 +1,52 @@
+<title>Edit Device Details</title>
+{%extends "base.html"%}
+
+
+{%block navigation%}
+<div id="options">
+    <h5 class="m-4">HOME</h5>
+    
+    <ul class="nav">
+    
+        <li class="nav-item">
+            <a href="home" id="showdevices" class="nav-link ">
+                <i class="fa fa-home"></i>
+                <span>Home</span></a>
+        </li>
+        <li class="nav-item">
+            <a href="logout" class="nav-link">
+                <i class="fa fa-user-lock"></i>
+                <span>Logout</span>
+            </a>
+        </li>
+
+    </ul>
+
+
+</div>
+<main class="offset-3" id="main">
+</main>
+{%endblock%}
+
+{%block content%}
+<style>
+    .form{
+        padding-top: 2%;
+        width: 60%;
+        margin-left: 10%;
+    }
+</style>
+<div class="form">
+    <label>Available Devices info</label><br><br>
+    
+    {%for name,conditions in connected_devices%}
+    <!-- {{name}} {{conditions}} -->
+        {%for pin in conditions%}
+        {%endfor%}
+        <span>Device name</span>
+        <input type="text" value="{{name}}"> <span>Pin Number</span><input type="number" value="{{pin}}"><br><br>
+            <!-- <span>{{name}} {{i}}</span><br> -->
+    {%endfor%}
+    <button >EDIT</button>
+    </div>
+{%endblock%}

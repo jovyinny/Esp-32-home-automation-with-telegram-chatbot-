@@ -1,0 +1,174 @@
+body{
+    background-color: rgba(226, 226, 248, 0.952);
+}
+
+.form{
+    width:70%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border:5px solid rgb(157, 168, 190);
+    border-radius: 10px;
+    padding-left: 2%;
+    padding-top: 1%;
+    background-color: rgb(164, 179, 201);
+}
+.form div{
+    /* width: 100%; */
+    position: relative;
+    margin-top: -1%;
+    margin-left: 5%;
+    display: block;
+
+}
+.form label{
+    color:rgba(44, 27, 27, 0.822);
+    font-size: 100%;
+
+}
+.form div button[type="submit"]:hover{
+    color:rgb(245, 221, 11);
+    background-color:green;
+
+
+}
+.form div button[type="submit"]{
+    color:green;
+    font-size: 15px;
+    padding: 5px;
+    margin-left: 60%;
+    background-color: rgb(245, 221, 11);
+
+}
+.form div input{
+    background-color:#f2f2f2c5;;
+    width: 70%;
+    font-size:90%;
+    border:2px solid rgb(3, 22, 56);
+    border-radius: 5px;
+}
+#togglevisibility{
+    /* position: relative; */
+    margin-left:-34%;
+}
+
+a{
+    text-decoration: none;
+    color:red;
+}
+
+#operation{
+    width: 95%;
+    margin-top: 5%;
+    margin-left: 4%;
+
+}
+
+#devicestatus{
+    width:30%;
+    background-color: rgb(207, 216, 124);
+    border-radius: 5px;
+    border: 2px solid red;
+    margin-top: 5px;
+    padding-left: 1%;
+    float: right;
+    margin-right:5% ;
+
+}
+#operations{
+    width: 60%;
+    height: auto;
+    background-color: rgb(164, 179, 201);
+    border-radius: 5px;
+    border: 2.5px solid red;
+    position: relative;
+    margin-top: 7%;
+    margin-left:28% ;
+    left: auto;
+    float: left;
+
+}
+
+.device{
+    border: 2px solid rgb(31, 34, 194);
+    margin-left: 5%;
+    padding: 1.5%;
+    background-color:rgb(29, 179, 10);
+    ;
+
+}
+
+#off,#on{
+    padding: 1%;
+    margin: 2%;
+    border-radius: 5%;
+}
+
+.off:hover {
+    background-color: red;
+}
+.on:hover{
+    background-color:green;
+}
+
+#add{
+    padding: 15px; margin-left: 5%;
+    margin-bottom: 5%;
+}
+
+.logout:hover{
+    color:red;
+    background-color: green;
+
+}
+
+
+/* homepage sytlings */
+#options{
+
+    width: 20%;
+    height: 100%;
+    position:fixed;
+    display: block;
+    background-color: rgb(241, 239, 239);
+    left:0;
+    top:0;
+} 
+
+#options ul li{
+    width: 100%;
+}
+#options ul li a{
+    color: rgb(88, 88, 88);
+    padding: 15px;
+    margin-left: 5%;
+    background-color: rgb(241, 239, 239);
+
+}
+
+#options ul li a:hover{
+    background-color: rgb(190, 190, 190);
+    
+} 
+
+#subedit{
+    position: relative;
+    left:0;
+    top:0;
+    text-decoration: none;
+    display: none;
+
+}
+
+#subedit li a{
+    width: 100%;
+}
+
+#options ul li:hover #subedit{
+    display: block;
+    
+} 
+
+
+
