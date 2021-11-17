@@ -59,6 +59,6 @@ Go to telegram->serach->**@botFather**->start-> follow the procedures to create 
 
 Note the bot token because it is very important when you what to control your bot
 
-  **__add .env file that will contain the bot key in format: "KEY=[<bot token>]"__**
+  **__add .env file that will contain the bot key in format: "KEY=[bot token]"__**
   
 You can adjust the time at which the bot run in schedule then run the run_bot.py, 
